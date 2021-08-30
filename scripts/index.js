@@ -31,25 +31,26 @@ const setAttributes = (element, attributes) => {
 }
 
 const displayPhotos = () => {
-    imagesLoaded = 0;
-    totalImages = photoArray.length;
-    photoArray.forEach( photo => {
-        const item = document.createElement('a');
-        setAttributes(item, {
-            href: photo.links.html,
-            target: '_blank'
-        })
-        const image = document.createElement('img');
-        setAttributes(image, {
-            src: photo.urls.regular,
-            alt: photo.alt_description,
-            title: photo.alt_description
-        })
+    console.log(photoArray);
+    // imagesLoaded = 0;
+    // totalImages = photoArray.length;
+    // photoArray.forEach( photo => {
+    //     const item = document.createElement('a');
+    //     setAttributes(item, {
+    //         href: photo.links.html,
+    //         target: '_blank'
+    //     })
+    //     const image = document.createElement('img');
+    //     setAttributes(image, {
+    //         src: photo.urls.regular,
+    //         alt: photo.alt_description,
+    //         title: photo.alt_description
+    //     })
 
-        image.addEventListener('load', imageLoaded)
-        item.appendChild(image);
-        imageContainer.appendChild(item);
-    });
+    //     image.addEventListener('load', imageLoaded)
+    //     item.appendChild(image);
+    //     imageContainer.appendChild(item);
+    // });
 }
 
 
