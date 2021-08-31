@@ -1,6 +1,3 @@
-@import url(./__image/loader__image.css);
-@import url(./_opened/loader_opened.css);
-
 .loader {
   margin: 0;
   display: none;
