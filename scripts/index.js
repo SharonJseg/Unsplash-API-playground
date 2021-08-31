@@ -1,3 +1,7 @@
+
+const cardTemplate = document.querySelector('#card-template').content;
+const cardsContainer = document.querySelector('.cards__container');
+
 const imageContainer = document.querySelector('.images');
 const loader = document.querySelector('.loader');
 
@@ -7,7 +11,7 @@ let imagesLoaded = 0;
 let totalImages = 0;
 let photoArray = []
 
-let initialImageCount = 5;
+let initialImageCount = 6;
 const apiKey = 'ZMj5sBlND299jvJ34CwWEERdPMdM9OgreeC1eFDPvqs';
 let apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${initialImageCount}`;
 
@@ -17,7 +21,6 @@ const updateAPIwithNewCount = (imageCount) => {
 
 const imageLoaded = () => {
     imagesLoaded++;
-    console.log(imagesLoaded);
     if (imagesLoaded === totalImages) {
         ready = true;
         loader.classList.remove('loader_opened')
@@ -30,27 +33,38 @@ const setAttributes = (element, attributes) => {
     }
 }
 
-const displayPhotos = () => {
-    console.log(photoArray);
-    // imagesLoaded = 0;
-    // totalImages = photoArray.length;
-    // photoArray.forEach( photo => {
-    //     const item = document.createElement('a');
-    //     setAttributes(item, {
-    //         href: photo.links.html,
-    //         target: '_blank'
-    //     })
-    //     const image = document.createElement('img');
-    //     setAttributes(image, {
-    //         src: photo.urls.regular,
-    //         alt: photo.alt_description,
-    //         title: photo.alt_description
-    //     })
 
-    //     image.addEventListener('load', imageLoaded)
-    //     item.appendChild(image);
-    //     imageContainer.appendChild(item);
-    // });
+
+const createCard = (card) => {
+    imagesLoaded = 0;
+    totalImages = photoArray.length;
+    const cardElement = cardTemplate.querySelector('.card__container').cloneNode(true);
+    const url = cardElement.querySelector('.card__image-link');
+    const likesNumber = cardElement.querySelector('.card__like-count');
+    const image = cardElement.querySelector('.card__image');
+    const title = cardElement.querySelector('.card__title');
+    const creatorImage = cardElement.querySelector('.card__creator-image');
+    const creatorName = cardElement.querySelector('.card__creator-name');
+    const creatorLocation = cardElement.querySelector('.card__creator-location');
+    const creatorBio = cardElement.querySelector('.card__creator-bio');
+
+    setAttributes(url, { href: card.links.html, target: '_blank' })
+    setAttributes(image, { src: card.urls.regular, alt: card.alt_description, title: card.alt_description});
+    setAttributes(creatorImage, {src: card.user.profile_image.medium, alt: card.user.name});
+    likesNumber.textContent = card.likes;
+    title.textContent = card.alt_description;
+    creatorLocation.textContent = card.user.location;
+    creatorName.textContent = card.user.name;
+    creatorBio.textContent = card.user.bio;
+
+    image.addEventListener('load', imageLoaded)
+    return cardElement;
+}
+
+const populateCards = () => {
+ photoArray.forEach(card => {
+    cardsContainer.append(createCard(card))
+ })
 }
 
 
@@ -58,7 +72,8 @@ const getPhotosFromApi = async () => {
     try {
         const response = await fetch(apiUrl);
         photoArray = await response.json();
-        displayPhotos();
+        populateCards();
+
         if (isInitialLoad){
             updateAPIwithNewCount(30)
             isInitialLoad = false;

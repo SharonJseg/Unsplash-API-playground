@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./vendors/normalize.css">
+    <link rel="stylesheet" href="./vendors/styles/normalize.css">
     <link rel="stylesheet" href="./pages/index.css">
     <title>Infinite Scroll</title>
 </head>
@@ -15,179 +15,42 @@
         <h1 class="header__title">UNSPLASH API PLAYGROUND</h1>
     </header>
 
-    <div class="loader">
+    <div class="loader loader_opened">
         <img src="./images/Cube-1s-100px.svg" alt="loading" class="loader__image">
     </div>
 
-    <main>
+    <main class="page__container">
         <section class="cards">
             <ul class="cards__container">
-                <li class="card__container">
-                    <a href="#" class="card__image-link">
-                        <div class="card__likes">
-                            <span class="card__like-icon"></span>
-                            <p class="card__like-count">50</p>
-                        </div>
-                        </div>
-                        <img src="./temp_images/1.jpg" alt="" class="card__image">
-                    </a>
-
-                    <p class="card__title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-                        quibusdam
-                        molestiae nisi cumque omnis quas nulla quis vel nobis officia.
-                    </p>
-                    <div class="card__details">
-                        <img src="./temp_images/profile-1617698123366-ff430f9f865aimage.jpg" alt=""
-                            class="card__creator-image">
-                        <div class="card__creator-details">
-                            <p class="card__creator-name">Sharon Segal<span class="card__creator-location">Kfar-Saba,
-                                    Israel</span></p>
-
-                            <p class="card__creator-bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio,
-                                impedit?</p>
-                        </div>
-
-                    </div>
-                </li>
-                <li class="card__container">
-                    <a href="#" class="card__image-link">
-                        <div class="card__likes">
-                            <span class="card__like-icon"></span>
-                            <p class="card__like-count">50</p>
-                        </div>
-                        </div>
-                        <img src="./temp_images/2.jpg" alt="" class="card__image">
-                    </a>
-
-                    <p class="card__title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-                        quibusdam
-                        molestiae nisi cumque omnis quas nulla quis vel nobis officia.
-                    </p>
-                    <div class="card__details">
-                        <img src="./temp_images/profile-1617698123366-ff430f9f865aimage.jpg" alt=""
-                            class="card__creator-image">
-                        <div class="card__creator-details">
-                            <p class="card__creator-name">Sharon Segal<span class="card__creator-location">Kfar-Saba,
-                                    Israel</span></p>
-
-                            <p class="card__creator-bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio,
-                                impedit?</p>
-                        </div>
-
-                    </div>
-                </li>
-                <li class="card__container">
-                    <a href="#" class="card__image-link">
-                        <div class="card__likes">
-                            <span class="card__like-icon"></span>
-                            <p class="card__like-count">50</p>
-                        </div>
-                        </div>
-                        <img src="./temp_images/3.jpg" alt="" class="card__image">
-                    </a>
-
-                    <p class="card__title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-                        quibusdam
-                        molestiae nisi cumque omnis quas nulla quis vel nobis officia.
-                    </p>
-                    <div class="card__details">
-                        <img src="./temp_images/profile-1617698123366-ff430f9f865aimage.jpg" alt=""
-                            class="card__creator-image">
-                        <div class="card__creator-details">
-                            <p class="card__creator-name">Sharon Segal<span class="card__creator-location">Kfar-Saba,
-                                    Israel</span></p>
-
-                            <p class="card__creator-bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio,
-                                impedit?</p>
-                        </div>
-
-                    </div>
-                </li>
-                <li class="card__container">
-                    <a href="#" class="card__image-link">
-                        <div class="card__likes">
-                            <span class="card__like-icon"></span>
-                            <p class="card__like-count">50</p>
-                        </div>
-                        </div>
-                        <img src="./temp_images/8.jpg" alt="" class="card__image">
-                    </a>
-
-                    <p class="card__title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-                        quibusdam
-                        molestiae nisi cumque omnis quas nulla quis vel nobis officia.
-                    </p>
-                    <div class="card__details">
-                        <img src="./temp_images/profile-1617698123366-ff430f9f865aimage.jpg" alt=""
-                            class="card__creator-image">
-                        <div class="card__creator-details">
-                            <p class="card__creator-name">Sharon Segal<span class="card__creator-location">Kfar-Saba,
-                                    Israel</span></p>
-
-                            <p class="card__creator-bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio,
-                                impedit?</p>
-                        </div>
-
-                    </div>
-                </li>
-                <li class="card__container">
-                    <a href="#" class="card__image-link">
-                        <div class="card__likes">
-                            <span class="card__like-icon"></span>
-                            <p class="card__like-count">50</p>
-                        </div>
-                        </div>
-                        <img src="./temp_images/11.jpg" alt="" class="card__image">
-                    </a>
-
-                    <p class="card__title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-                        quibusdam
-                        molestiae nisi cumque omnis quas nulla quis vel nobis officia.
-                    </p>
-                    <div class="card__details">
-                        <img src="./temp_images/profile-1617698123366-ff430f9f865aimage.jpg" alt=""
-                            class="card__creator-image">
-                        <div class="card__creator-details">
-                            <p class="card__creator-name">Sharon Segal<span class="card__creator-location">Kfar-Saba,
-                                    Israel</span></p>
-
-                            <p class="card__creator-bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio,
-                                impedit?</p>
-                        </div>
-
-                    </div>
-                </li>
-                <li class="card__container">
-                    <a href="#" class="card__image-link">
-                        <div class="card__likes">
-                            <span class="card__like-icon"></span>
-                            <p class="card__like-count">50</p>
-                        </div>
-                        </div>
-                        <img src="./temp_images/15.jpg" alt="" class="card__image">
-                    </a>
-
-                    <p class="card__title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-                        quibusdam
-                        molestiae nisi cumque omnis quas nulla quis vel nobis officia.
-                    </p>
-                    <div class="card__details">
-                        <img src="./temp_images/profile-1617698123366-ff430f9f865aimage.jpg" alt=""
-                            class="card__creator-image">
-                        <div class="card__creator-details">
-                            <p class="card__creator-name">Sharon Segal<span class="card__creator-location">Kfar-Saba,
-                                    Israel</span></p>
-
-                            <p class="card__creator-bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio,
-                                impedit?</p>
-                        </div>
-
-                    </div>
-                </li>
 
             </ul>
         </section>
     </main>
+
+    <template id="card-template">
+        <li class="card__container">
+            <a href="" class="card__image-link">
+                <div class="card__likes">
+                    <span class="card__like-icon"></span>
+                    <p class="card__like-count"></p>
+                </div>
+                </div>
+                <img src="" alt="" class="card__image">
+            </a>
+            <p class="card__title"></p>
+            <div class="card__details">
+                <img src="" alt="" class="card__creator-image">
+                <div class="card__creator-details">
+                    <div class="card__creator-container">
+                        <p class="card__creator-name"></p>
+                        <p class="card__creator-location"></p>
+                    </div>
+                    <p class="card__creator-bio"></p>
+                </div>
+            </div>
+        </li>
+    </template>
+
     <script src="./scripts/index.js"></script>
 </body>
 
