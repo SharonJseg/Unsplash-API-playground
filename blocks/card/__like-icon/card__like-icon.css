@@ -1,0 +1,8 @@
+.card__like-icon {
+  display: inline-block;
+  background: url(../../../images/heart-active.svg) center center;
+  height: 18px;
+  width: 21px;
+  filter: drop-shadow(2px 2px 5px rgba(0 0 0 / 0.8));
+  -webkit-filter: drop-shadow(2px 2px 5px rgba(0 0 0 / 0.8));
+}
